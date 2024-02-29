@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>className and classList</title>
+  </head>
+  <body>
+    <div class="container">
+      <p class="paragraph paragraph-1 paragraph-2 paragraph-3 paragraph-4">
+        QWERTYUIOPLKJHGFDSAZXCVBNM
+      </p>
+    </div>
+    <script>
+      let paragraphs = document.getElementsByClassName("paragraph");
+
+      let firstParagraph = paragraphs[0];
+
+      firstParagraph.classList.add("paragraph-5");
+      firstParagraph.classList.remove("paragraph-1");
+      console.log(firstParagraph.classList.contains("paragraph-2"));
+      console.log(firstParagraph.classList.toggle("paragraph-3"));
+      console.log(firstParagraph.classList.toggle("paragraph-3"));
+    </script>
+  </body>
+</html>

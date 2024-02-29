@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <b>A</b>
+      <b>B</b>
+      <b>C</b>
+      <b>D</b>
+      <b>E</b>
+      <b>F</b>
+      <b>G</b>
+      <b>H</b>
+      <b>I</b>
+      <b>J</b>
+      <b>K</b>
+      <b>L</b>
+    </div>
+    <script>
+      let sum = function (a, b) {
+        console.log(a + b);
+      };
+      let a = Number.parseInt(prompt("Enter value for a: "));
+      let b = Number.parseInt(prompt("Enter value for b: "));
+      let timerID = setTimeout(sum, 8000, a, b);
+      console.log(timerID);
+      let choice = prompt("Do you want to clear timeout: (y/n): ");
+      if (choice === "y") {
+        clearTimeout(timerID);
+      }
+
+      let intervalID = setInterval(
+        (a, b) => {
+          console.log(a + b);
+        },
+        2000,
+        10,
+        20
+      );
+      console.log(intervalID);
+      choice = prompt("Do you want to clear interval: (y/n): ");
+      if (choice === "y") {
+        clearInterval(intervalID);
+      }
+    </script>
+  </body>
+</html>

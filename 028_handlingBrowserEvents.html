@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div>
+      <button id="btn">Click here</button>
+    </div>
+    <script>
+      let x = function (e) {
+        alert("Bega jeppuleeee");
+        console.log(e.currentTarget);
+        console.log(e);
+        console.log(e.target);
+        console.log(typeof e);
+        console.log(e.type, e.clientX, e.clientY);
+      };
+
+      let y = function (e) {
+        alert("Bega lakuleee");
+        console.log(e);
+        console.log(e.target);
+      };
+
+      btn.addEventListener("click", x);
+      btn.addEventListener("click", y);
+      let a = prompt("Enter your favorite number: ");
+
+      if (a == "2") {
+        btn.removeEventListener("click", x);
+      }
+    </script>
+  </body>
+</html>

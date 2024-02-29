@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Events and DOM Properties</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    Hi everyone
+    <p id="demo">
+      This lecture is about Events and
+      <strong id="demo1">DOM</strong> properties
+    </p>
+    <p id="demo2" hidden>
+      This lecture is about Events and
+      <strong id="demo1">DOM</strong> properties
+    </p>
+    <script>
+      console.log(document.getElementsByTagName("strong")[0]);
+      console.dir(document.getElementsByTagName("strong")[0]);
+
+      console.log(document.body.firstChild.tagName);
+      console.log(document.body.firstChild.nodeName);
+
+      console.log(document.body.firstElementChild.tagName);
+      console.log(document.body.firstElementChild.nodeName);
+
+      let x = document.getElementById("demo");
+      console.log(x.innerHTML);
+      console.log(typeof x.innerHTML);
+      x.innerHTML = "";
+      console.log(x);
+      console.log(typeof x.innerHTML);
+      x.innerHTML = "Hey how are you";
+
+      x = document.getElementById("demo1");
+      console.log(x.outerHTML);
+      console.log(typeof x.outerHTML);
+      x.outerHTML = "";
+      console.log(x);
+      console.log(typeof x.outerHTML);
+      // x.outerHTML = "<div>IPL 2023 - ESCN</div>"
+
+      console.log(document.body.firstChild.nodeValue);
+      console.log(document.body.firstChild.data);
+
+      console.log(document.body.textContent);
+
+      x = document.getElementById("demo2");
+      console.log(x);
+      x.hidden = false;
+      demo2.hidden = true;
+    </script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ console.table(alphabets);
 console.warn("Warn");
 
 console.time("forLoop")
-for (let i=0; i<500; i++) {
+for (let i=0; i<5; i++) {
     console.log(500)
 }
 console.timeEnd("forLoop")

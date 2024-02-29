@@ -7,8 +7,8 @@ console.log(a)
 console.log(b)
 console.log(remaining)
 const [a1, , , , ...remaining1] = alphabets
-console.log(a1)
-console.log(remaining1)
+console.log("A1: ",a1)
+console.log("Remaining1:" ,remaining1)
 
 // Destructuring objects
 

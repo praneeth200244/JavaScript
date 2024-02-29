@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Browser Events</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      .box {
+        height: 250px;
+        width: 350px;
+        border: 2px solid aqua;
+        margin: 1rem;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="container box"
+      onmouseenter="console.log('Aravind Bolar...')"
+      onclick="console.log('Tulunada maanikyaa')"
+    >
+      <p>Container-1</p>
+      <button onclick="alert('Encha uller....')">Click me</button>
+    </div>
+
+    <div class="container_2 box">
+      <p>Container-2</p>
+      <button onclick="myClick()">Submit</button>
+    </div>
+    <script>
+      let a = document.getElementsByClassName("container")[0];
+      console.log(a);
+
+      a.onclick = () => {
+        let b = document.getElementsByClassName("container")[0];
+        console.log("Avv ereg ave...?");
+        b.innerHTML = "Undu Kudla Bro";
+      };
+
+      function myClick() {
+        document.write("1000000000000000");
+      }
+    </script>
+  </body>
+</html>

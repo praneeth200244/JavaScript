@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>replit</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="first">I am beginner</div>
+    </div>
+    <script>
+      let a = document.getElementsByTagName("div")[0];
+      console.log(a);
+      a.innerHTML += "<h1>Hello Harry Bhai</h1>";
+
+      let d = document.createElement("div");
+      d.innerHTML = "<h1>Hello Suraj Bhai</h1>";
+      //   a.appendChild(d);
+      //   a.prepend(d);
+      //   a.before(d);
+      //   a.after(d);
+      a.replaceWith(d);
+    </script>
+  </body>
+</html>
