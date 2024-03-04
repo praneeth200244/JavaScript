@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Hell</title>
+    <style>
+      .container,
+      .container2 {
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        width: 10rem;
+        transition: 2s background-color;
+        margin: 2rem 2rem;
+      }
+      #color,
+      #color1 {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p id="color"></p>
+    </div>
+
+    <div class="container2">
+      <p id="color1"></p>
+    </div>
+    <script>
+      const container = document.querySelector(".container");
+      const color = document.getElementById("color");
+
+      setTimeout(() => {
+        container.style.backgroundColor = "violet";
+        color.innerText = "VIOLET";
+
+        setTimeout(() => {
+          container.style.backgroundColor = "indigo";
+          color.innerText = "INDIGO";
+
+          setTimeout(() => {
+            container.style.backgroundColor = "blue";
+            color.innerText = "BLUE";
+
+            setTimeout(() => {
+              container.style.backgroundColor = "green";
+              color.innerText = "GREEN";
+
+              setTimeout(() => {
+                container.style.backgroundColor = "yellow";
+                color.innerText = "YELLOW";
+
+                setTimeout(() => {
+                  container.stylebackgroundColor = "orange";
+                  color.innerText = "ORANGE";
+
+                  setTimeout(() => {
+                    container.style.backgroundColor = "red";
+                    color.innerText = "RED";
+                  });
+                }, 2000);
+              }, 2000);
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+
+      const container2 = document.querySelector(".container2");
+      const color1 = document.getElementById("color1");
+
+      const changeColor = (color, colorName, delayTime, nextFunction) => {
+        setTimeout(() => {
+          container2.style.backgroundColor = color;
+          color1.innerText = colorName;
+          nextFunction && nextFunction();
+        }, delayTime);
+      };
+
+      changeColor("violet", "VIOLET", 2000, () => {
+        changeColor("indigo", "INDIGO", 2000, () => {
+          changeColor("blue", "BLUE", 2000, () => {
+            changeColor("green", "GREEN", 2000, () => {
+              changeColor("yellow", "YELLOW", 2000, () => {
+                changeColor("orange", "ORANGE", 2000, () => {
+                  changeColor("red", "RED", 2000, () => {});
+                });
+              });
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
