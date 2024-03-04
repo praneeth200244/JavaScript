@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Practice Set: Chapter-8</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      .bulb {
+        height: 50px;
+        width: 50px;
+        background-color: orange;
+      }
+
+      .glowbulb {
+        height: 75px;
+        width: 75px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Practice Set: Chapter-8</h1>
+
+    <h2>Question-1</h2>
+    <button onclick="alert('Udupi')">KA 20</button>
+    <button onclick="alert('Mangaluru')">KA 19</button>
+    <button onclick="alert('Mysuru')">KA 09</button>
+    <button onclick="alert('Sullya')">KA 21</button><br /><br />
+
+    <h2>Question-2</h2>
+    <button><a href="https://www.google.com" target="_blank">Google</a></button>
+    <button>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </button>
+    <button>
+      <a href="https://www.whatsapp.com" target="_blank">WhatsApp</a></button
+    ><br /><br />
+
+    <h2>Question-3</h2>
+    <button id="google">Google</button>
+    <button id="twitter">Twitter</button>
+    <button id="whatsapp">WhatsApp</button>
+
+    <h2>Question-4</h2>
+    <p>Fetch Content From website every 5 seconds and display</p>
+    <div class="container"><p>Content Display</p></div>
+    <br /><br />
+
+    <h2>Question-5</h2>
+    <p>Glowing Bulb Effect</p>
+    <div id="bulb" class="bulb glowbulb"></div>
+    <br /><br />
+
+    <script>
+      // Question-3
+      document.getElementById("google").addEventListener("click", function () {
+        window.location = "https://www.google.com";
+      });
+
+      document.getElementById("twitter").addEventListener("click", function () {
+        let url = "https://www.twitter.com";
+        window.open(url);
+      });
+
+      document
+        .getElementById("whatsapp")
+        .addEventListener("click", function () {
+          let url = "https://www.whatsapp.com";
+          window.open(url);
+        });
+
+      // Question-5
+      setInterval(function () {
+        document.getElementById("bulb").classList.toggle("glowbulb");
+      }, 2000);
+
+      // Question-4
+      const container = document.querySelector(".container");
+
+      setInterval(function () {
+        try {
+          const newContent = document.createElement("p");
+          newContent.innerHTML = "Hello";
+          container.appendChild(newContent);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }, 5000);
+    </script>
+  </body>
+</html>
