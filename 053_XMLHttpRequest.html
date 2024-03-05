@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XMLHttpRequest</title>
+  </head>
+  <body>
+    <script>
+      const myObject = new XMLHttpRequest();
+
+      myObject.onload = function () {
+        console.log("Content loaded successfully");
+        console.log(this);
+        console.log(JSON.parse(this.responseText));
+
+        setTimeout(() => {
+          console.log("Task-2 after successful completion of task-1");
+        }, 1000);
+      };
+
+      myObject.onerror = function () {
+        console.log("Couldn't load the content successfully");
+        console.log(this);
+      };
+
+      myObject.open("GET", "https://icanhazdadjoke.com", true);
+      myObject.setRequestHeader("Accept", "application/json");
+      myObject.send();
+    </script>
+  </body>
+</html>
